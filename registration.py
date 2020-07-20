@@ -12,7 +12,7 @@ def lambda_handler(event, context):
 
     emailIsFree = checkEmail(event, context, login)
 
-    if emailIsFree == True:
+    if emailIsFree:
         postRegistrationData(event, context, data)
         response = {'status': 'Success', 'message': 'You have successfully registered'}
     else:
