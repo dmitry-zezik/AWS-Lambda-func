@@ -11,7 +11,7 @@ def lambda_handler(event, context):
     
     AuthResponse = checkAuthData(event, context, deviceID)
     
-    if AuthResponse == True:
+    if AuthResponse:
         response = {'status': 'Success', 'message': 'You have successfully logged in'}
     else:
         postRegistrationData(event, context, deviceID)
